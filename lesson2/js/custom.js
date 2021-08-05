@@ -6,4 +6,4 @@ console.log(secondValue);
 
 if (firstValue > secondValue) alert('firstValue > secondValue')
 else if (firstValue < secondValue) alert('firstValue < secondValue')
-else if (firstValue == secondValue) alert('firstValue = secondValue')
+else if (firstValue === secondValue) alert('firstValue = secondValue')
