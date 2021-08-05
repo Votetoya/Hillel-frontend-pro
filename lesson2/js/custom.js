@@ -1,5 +1,5 @@
-var firstValue = prompt('Ввведите первое значение');
-var secondValue = prompt('Введите второе значение');
+var firstValue = prompt('Enter the first value');
+var secondValue = prompt('Enter the second value');
 
 console.log(firstValue);
 console.log(secondValue);
