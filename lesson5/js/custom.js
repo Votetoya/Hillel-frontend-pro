@@ -5,10 +5,6 @@ function isLannisterSoldier(color, shield){
       } else {
         return false;
       }
-
-    
-    
-    
     }
 
 console.log (isLannisterSoldier() );
