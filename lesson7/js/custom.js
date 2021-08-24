@@ -1,12 +1,24 @@
-
 var num;
-for (num = 1; num <= 10; num++) {
-    1 * num;
-    console.log('1 *',num,'=' ,num);
+var nu;
+
+for(var num = 1; num <= 10; num++) {
+    for(var nu = 1; nu <= 10; nu++) {
+        console.log(num + ' *', nu, '=',  num * nu) ;
+    }
+    console.log('/-/-/-/');
+  }
+
+
+  /*
+var numb;
+for (numb = 1; numb <= 10; numb++) {
+    1 * numb;
+    console.log('1 *',numb,'=' ,numb);
 }
 
 if (num == 11)
 console.log('--/--/--/--/--/');
+*/
 
 
 
