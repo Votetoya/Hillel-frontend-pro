@@ -25,10 +25,16 @@ console.log('Второй вариант');
 function max(numArray) 
 {
     var nums = numArray.slice();
-	if (nums.length == 1) { return nums[0]; }
-    if (nums[0] < nums[1]) { nums.splice(0,1); }
-    else { nums.splice(1,1); }
-    return max(nums);
+	    if (nums.length == 1) {
+        return nums[0]; 
+      }
+      if (nums[0] < nums[1]) {
+        nums.splice(0,1); 
+      }
+      else {
+        nums.splice(1,1); 
+      }
+      return max(nums);
 }
 
 console.log('max', max([1, 8, 37, 5, 17]));
