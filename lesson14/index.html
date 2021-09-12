@@ -4,15 +4,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HomeWork_7</title>
+    <title>HomeWork_14</title>
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
-    
-    HomeWork14
-    <br>
-    
+    <form id="UserContForm" class="myForm" onsubmit="return false">
+        <table>
+            <thead>
+               <tr>
+                   <th>First name</th>
+                   <th>Second name</th>
+                   <th>Phone</th>
+                   <th>SEND</th>
+               </tr> 
+            </thead>
 
+            <tbody id="contList"></tbody>
+            
+            <tfoot>
+            <tr>
+                <td><input name="firstname" type="text" id="firstnameInput" class="formInput" placeholder="Input your firstname" /></td>
+                <td><input name="secondname" type="text" id="secondnameInput" class="formInput" placeholder="Input your secondname" /></td>
+                <td><input name="phone" type="number" id="phoneInput" class="formInput" placeholder="Input your phone number" /></td>
+                <td><button id="sendContBtn">SEND CONTACT</button></td> 
+            </tr>
+            </tfoot>
+        </table>
+    </form>
+
+    <script type="table/template" id="contTemplate">
+        <tr class="contRow">
+            <td>{{firstnameTemplate}}</td>
+            <td>{{secondnameTemplate}}</td>
+            <td>{{phoneTemplate}}</td>
+            <td><button type="button" class="deleteBtn">Delete</button></td>
+        </tr>
+    </script>
     <script src="custom.js"></script>
 </body>
 </html>
