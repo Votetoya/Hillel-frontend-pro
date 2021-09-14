@@ -1,57 +1,53 @@
-// подписка на всю форму по id
-const inpBox = document.getElementById('inpBtnBox');
-//Подписка на инпут по id
-const inputForm = document.getElementById('mainInput');
-//Подписка на темплэйт
-const listTemplate = document.getElementById('listTemplate').innerHTML;
-//Подписка на id div для вставки данных
-const newData = document.getElementById('dataList');
-//Подписка на кнопку send
-const sendBtn = document.getElementById('mainBtn');
-//Подписка на кнопку delete
-const delBtn = document.querySelector('.deleteBtn');
-//Подписка на кнопку done
-const donBtn = document.querySelector('.doneBtn');
-//Подписка на класс списка тэмплейта
-const classLi = document.querySelector('.classTemplLi');
+const SELECTOR = Object.freeze({
+    DONE_BTN: '.doneBtn',
+    TEMPLATE_LIST_CLASS: '.classTemplLi',
+    TEMPLATE_UL_CLASS: '.listRow',
+});
+const CLASS = Object.freeze({
+    DELETE_BTN: 'deleteBtn',
+    DONE_BTN: 'doneBtn',
+    GREEN_BACKGROUND: 'green_class',
+});
+const ID = Object.freeze({
+    INPUT: 'mainInput',
+    TEMPL: 'listTemplate',
+    DATALIST: 'dataList',
+    SEND_BTN: 'mainBtn',
+});
 
-const DELETE_BTN = 'deleteBtn';
-const TEMPLATE_UL_CLASS = '.listRow';
-const DONE_BTN = 'doneBtn';
-const TEMPLATE_LIST_CLASS = '.classTemplLi';
+const inputForm = document.getElementById(ID.INPUT);
+const listTemplate = document.getElementById(ID.TEMPL).innerHTML;
+const newData = document.getElementById(ID.DATALIST);
+const sendBtn = document.getElementById(ID.SEND_BTN);
+const donBtn = document.querySelector(SELECTOR.DONE_BTN);
+const classLi = document.querySelector(SELECTOR.TEMPLATE_LIST_CLASS);
 
-// Листенер на добавление данных в список
-sendBtn.addEventListener('click', onDataListAdd);
+sendBtn.addEventListener('click', onSendButtonClick);
+newData.addEventListener('click', onTodoListClick);
 
-// Листенер на удаление данных в списке
-newData.addEventListener('click', onDataListRemove);
+function onSendButtonClick() {
+    pubList();
+}
 
-// Листенер на изменение класса в списке и зеленого бэкграунда
-newData.addEventListener('click', onDataListClassChange);
+function onTodoListClick(evt) {
+        if (evt.target.classList.contains(CLASS.DELETE_BTN)) {
+        evt.target.closest(SELECTOR.TEMPLATE_UL_CLASS).remove();
+        return;
+    }
+    if (evt.target.classList.contains(CLASS.DONE_BTN)) {
+        evt.target.closest(SELECTOR.TEMPLATE_LIST_CLASS).classList.toggle(CLASS.GREEN_BACKGROUND);
+        //evt.target.classList.toggle('green_class');
+    }
+}
 
-function onDataListAdd() {
-    const templateHTML = listTemplate .replace('{{fromInpData}}', inputForm.value) ;
+function pubList() {
+    const templateHTML = listTemplate .replace('{{fromInpData}}', inputForm.value);
 
     if(inputForm.value !== '') {
-    newData.insertAdjacentHTML('beforeend', templateHTML);
-    inputForm.value = null;
-    }
-    else {
-        alert('Ввведите данные!');
-    }
-}
-
-function onDataListRemove(evt) {
-        if (evt.target.classList.contains(DELETE_BTN)) {
-        evt.target.closest(TEMPLATE_UL_CLASS).remove();
-    }
-    
-}
-
-function onDataListClassChange(evt) {
-            if (evt.target.classList.contains(DONE_BTN)) {
-            evt.target.closest(TEMPLATE_LIST_CLASS).classList.toggle('green_class');
-            //evt.target.classList.toggle('green_class');
-     }
-    
+        newData.insertAdjacentHTML('beforeend', templateHTML);
+        inputForm.value = null;
+        }
+        else {
+            alert('Ввведите данные!');
+        }   
 }

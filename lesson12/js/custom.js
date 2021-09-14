@@ -73,3 +73,7 @@
 
 /* add: (n) => num = num + n,
   } */
+
+  /* calculator = {
+
+  } */
