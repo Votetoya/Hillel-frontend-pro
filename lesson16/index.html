@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomeWork_16</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+  <div id="dataList" class="divRow">
+    <ul class="listRow">
+      <li id="id1" class="classTemplLi">
+        Bob
+        <input type="checkbox" class="doneBtn">Done</button>
+        <input type="image" name="image" class="deleteBtn" src="./cross.png" width="25px">
+      </li>
+    </ul>
+  </div>
+
+  <div id="inpBtnBox">
+    <input id="mainInput" class="addInfoInput" name="AnyInput" type="text" placeholder="Input any string value" />
+    <button id="mainBtn" >SEND</button>
+  </div>
+
+    <script type="list/template" id="listTemplate">
+      <ul class="listRow">
+        <li class="classTemplLi">
+          {{fromInpData}}
+          <input type="checkbox" class="doneBtn">Done</button>
+          <input type="image" name="image" class="deleteBtn" src="./cross.png" width="25px">
+        </li>
+      </ul>
+    </script>
+    <script src="custom.js"></script>
+</body>
+</html>
