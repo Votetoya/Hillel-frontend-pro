@@ -1,0 +1,27 @@
+#container {
+	display: flex;
+	justify-content: space-around;
+	}
+.nav-title {
+    border: 1px solid;
+	background-color:#ffeb3b;
+}
+.nav-body {
+    border: 1px solid;
+	display: none;
+}
+.nav-body-open {
+	display: block;
+	width: 320%;
+}
+.nav-item {
+	width: 30%;
+}
+.posi {
+	position: relative;
+	right: 111%;
+}
+.posi1 {
+	position: relative;
+	right: 222%;
+}
