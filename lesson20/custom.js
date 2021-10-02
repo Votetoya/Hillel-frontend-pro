@@ -16,9 +16,9 @@ class CustomNav {
     }
     assignClasses() { 
 
-        const navTtems = this.#rootEl.children
+        const navItems = this.#rootEl.children
 
-        for(let itemEl of navTtems) {
+        for(let itemEl of navItems) {
             const [titleEl, contentEl] = itemEl.children;
 
             itemEl.classList.add(CustomNav.NAV_CLASS);
@@ -28,10 +28,10 @@ class CustomNav {
     }
 
     assignEvents() {
-        this.#rootEl.addEventListener ('click', (e) => this.onRootElclick(e));
+        this.#rootEl.addEventListener ('click', (e) => this.onRootelclick(e));
     }
 
-    onRootElclick(e) {
+    onRootelclick(e) {
         if (e.target.classList.contains(CustomNav.TITLE_CLASS)) {
             const titleEl = e.target;
             const contentEl = this.findContent(titleEl);
