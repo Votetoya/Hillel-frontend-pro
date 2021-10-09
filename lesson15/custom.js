@@ -1,39 +1,33 @@
-/* let user = {
-    name: "John",
-    surname: "Smith"
-};
+const track = document.querySelector('.carousel__track');
+const slides =Array.from(track.children);
+const nextButton = document.querySelector('.carousel__button--right');
+const prevButton = document.querySelector('.carousel__button--left');
+const dotsNav = document.querySelector('.carousel__nav');
+const dots = Array.from(dotsNav.children);
 
-Object.defineProperties(user, 'fullName'), {
-    get fullName() {
-        return '${this.name} ${this.surname}';
-    },
-    set fullName(value) {
-        [this.name, this.surmane] = value.split (" ");
-    }
+const slideWidth = slides[0].getBoundingClientRect().width;
+//console.log(slideWidth);
+
+
+const setSlidePosition = (slide, index) => {
+    slide.style.left = slideWidth * index + 'px';
 }
 
-user.fullName = "Alice Cooper";
-
-alert(user.name)
-alert(user.surname)
- */
-
-//////////////////
+slides.forEach(setSlidePosition);
 
 
-/* document.querySelector('.hider').addEventListener('click', function (){
-
-const text = document.querySelector('.text')
-if (text.hidden) {
-    text.hidden = false;
-}
- else {
-    text.hidden = true;
-
-}) */
-const pain = document.querySelectorAll('pain')
-console.log('pain --->', pain)
-let div = document.createElement('div');
 
 
-document.body.append(div);
+nextButton.addEventListener('click', e => {
+    const currentSlide = track.querySelector('.curretn-slide');
+    const nextSlide = currentSlide.nextElementSibling;
+    const amoumtToMove = nextSlide.style.left;
+
+console.log(currentSlide);
+console.log(nextSlide);
+
+    track.style.transform = 'translateX(-' + amoumtToMove + ')';
+    currentSlide.classList.remove('current-slide');
+    currentSlide.classList.add('current-slide');
+})
+
