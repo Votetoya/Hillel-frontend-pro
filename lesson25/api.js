@@ -24,3 +24,4 @@ class TypicodeAPI {
         .then((data) => data);
     }
   }
+  
