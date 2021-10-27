@@ -1,0 +1,22 @@
+th,
+input {
+  width: 20rem;
+}
+td {
+  border: 1px solid black;
+}
+tfoot td {
+  border: none;
+}
+button {
+  cursor: pointer;
+  border: 1px solid blue;
+  background-color: rgb(255, 255, 255);
+  font-weight: bold;
+}
+.public-table {
+  text-align: center;
+}
+.ui-widget-content {background:white!important;
+border: 1px solid black;
+padding: 3px;}
