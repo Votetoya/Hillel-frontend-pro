@@ -53,13 +53,12 @@ const $modal = $(SELECTOR.MODAL).dialog({
        updateNote(note);
 		  } else {
        createNote(note);
-		      } 
-      
+		      }       
       closeModal();
-    },
-    Cancel: closeModal,
-  },
-  close: closeModal,
+      },
+      Cancel: closeModal,
+      },
+      close: closeModal,
 });
  
  
@@ -78,9 +77,9 @@ function onEditButtonClick(e) {
 	 
   const $input = e;
   const note = {
-    Id: $input.parent().parent().children("td:first").text(),
-    title: $input.parent().parent().children("td:first").next().text(),
-	  body: $input.parent().parent().children("td:first").next().next().text()};
+    Id: $input.closest('tr').children("td:first").text(),
+    title: $input.closest('tr').children("td:first").next().text(),
+	  body: $input.closest('tr').children("td:first").next().next().text()};
 
   openModal(note);
 }
