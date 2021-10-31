@@ -1,0 +1,37 @@
+body {
+  height: 100%;
+  display: block;
+  margin: 8px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+#list{
+  display: flex;
+  flex-direction: row;
+  width: 95%;
+  flex-wrap: wrap;
+}
+
+.note {
+  display: flex;
+  margin: 10px 10px;
+  flex-direction: column;
+  height: 80px;
+  width: 300px;
+  background-color: cadetblue;
+  padding-left: 8px;
+}
+
+.delete-note {
+  cursor: pointer;
+  text-align: right;
+  margin-left: 90%;
+}
+
+.edit-note-control {
+  width: 80%;
+}
