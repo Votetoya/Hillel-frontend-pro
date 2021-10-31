@@ -29,7 +29,6 @@ class PostAPI {
     }
   
     static delete(id) {
-        console.log(id)
       return this.request(`/${id}`, `DELETE`)
       .then((res) => {
         if(!res.ok && res.status !== 204) {
@@ -39,8 +38,8 @@ class PostAPI {
     }
   
       static create(note) {
-      return this.request(``, `POST`, {user_id: this.USER_ID, "title": note.Title,
-      "body": note.Body })
+      return this.request(``, `POST`, {user_id: this.USER_ID, "title": note.title,
+      "body": note.body })
         .then((res) => {
           if(res.ok) {
             return res.json();
@@ -54,8 +53,8 @@ class PostAPI {
   
     static update(note) {
       
-      return this.request('/'+note.Id, `PUT`, {"title": note.Title,
-      "body": note.Body })
+      return this.request('/'+note.Id, `PUT`, {"title": note.title,
+      "body": note.body })
       
       .then((res) => {
         if(res.ok) {
