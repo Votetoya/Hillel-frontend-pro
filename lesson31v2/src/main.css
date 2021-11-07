@@ -1,0 +1,32 @@
+li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .photos {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .album-photo {
+    display: flex;
+    flex-wrap: wrap;
+    width: 60%;
+  }
+  
+  .active {
+    color: red;
+  }
+  
+  .title-img {
+      display: flex;
+      align-items: flex-end;
+      width: 150px;
+      height: 90px;
+  }
+  
+  p {
+      margin-bottom: 0;
+      padding-left: 5px;
+  }
