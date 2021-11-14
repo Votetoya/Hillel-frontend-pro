@@ -1,0 +1,56 @@
+body,
+html {
+  height: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+#list{
+  display: flex;
+  flex-direction: row;
+  width: 95%;
+  flex-wrap: wrap;
+}
+
+.note {
+  margin: 10px 10px;
+  flex-direction: column;
+  background-color: white;
+  padding-left: 8px;
+
+}
+
+.note td{text-align:center;}
+.top td{font-weight:bold;text-align:center;}
+.name{width:70px;}
+.marks{width:520px;}
+.email{width:100px;}
+
+.marks input {width:40px;margin-right:3px;text-align:center;}
+
+.delete-note  input{
+  cursor: pointer;
+}
+
+.edit-note-control {
+  width: 80%;
+}
+
+.draggable-note {
+  cursor: pointer;
+}
+
+.edit-note {
+  cursor: pointer;
+}
+
+#addNoteBtn {
+  float: right;
+}
+
+.newuser {
+  width: 600px;
+}
